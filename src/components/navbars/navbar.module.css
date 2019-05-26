@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  margin: 0.2rem 1.5rem;
+  grid-column: 2/-1;
+  align-items: center;
+  justify-content: flex-end;
+}
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.listItem {
+  display: inline-block;
+  margin-left: 1.8rem;
+  font-size: 1.1rem;
+  color: #beb9b9;
+}
+
+.listItem a {
+  text-decoration: none;
+  color: #beb9b9;
+}
+
+.link a,
+.link p {
+  display: inline-block;
+}
+
+.searchBox {
+  display: flex;
+  border-radius: 1rem;
+  width: 100%;
+  height: 2rem;
+  align-items: center;
+  transform: translateY(-7%);
+}
+
+.searchBox input {
+  border: none;
+  background: none;
+  outline: none;
+  display: none;
+  margin-left: 0.4rem;
+  transition: 300ms;
+  color: #e2e2e2;
+}
+
+.searchBtn {
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}

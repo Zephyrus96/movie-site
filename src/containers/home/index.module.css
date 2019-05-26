@@ -1,0 +1,10 @@
+body {
+  background-color: rgb(26, 33, 36);
+  overflow-x: hidden;
+}
+
+.title {
+  color: #e2e2e2;
+  margin: auto;
+  padding: 0 1rem;
+}

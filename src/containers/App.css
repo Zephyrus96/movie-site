@@ -1,0 +1,16 @@
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(4rem, 1fr));
+  grid-template-columns: 18rem repeat(auto-fill, minmax(18rem, 1fr));
+}
+
+.main-container {
+  grid-row: 2/-1;
+  grid-column: 2/-1;
+  width: 100%;
+}

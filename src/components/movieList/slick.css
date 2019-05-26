@@ -1,0 +1,51 @@
+.slick-slider {
+  position: relative;
+  margin: 0;
+}
+
+.slick-track {
+  display: flex;
+  flex-direction: row;
+}
+
+.slick-next {
+  position: absolute;
+  right: 3%;
+  top: 33%;
+  z-index: 1;
+}
+
+.slick-prev {
+  position: absolute;
+  left: 0;
+  top: 33%;
+  z-index: 1;
+}
+
+.slick-next,
+.slick-prev {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #484b4d;
+  opacity: 0;
+}
+
+.slick-next:hover,
+.slick-next:active,
+.slick-prev:hover,
+.slick-next:active {
+  cursor: pointer;
+}
+
+.slick-slider:hover .slick-next,
+.slick-slider:hover .slick-prev {
+  opacity: 1;
+}
+
+.slick-next img,
+.slick-prev img {
+  height: 0.5rem;
+  display: block;
+  padding-top: 0.45rem;
+  margin: auto;
+}

@@ -1,0 +1,42 @@
+.container {
+  box-sizing: border-box;
+  text-align: center;
+  width: auto;
+  padding: 1rem;
+  transition: background-color 300ms;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.image {
+  height: 231px;
+}
+
+.title {
+  color: #e2e2e2;
+  margin: 0.8rem auto;
+}
+
+.info {
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: transform 250ms, opacity 200ms 100ms;
+}
+
+.info p {
+  font-size: 0.8rem;
+  color: #939ba2;
+}
+
+.container:hover,
+.container:active {
+  background: #262f33;
+  cursor: pointer;
+}
+
+.container:hover .info {
+  opacity: 1;
+  transform: translateY(0);
+}
