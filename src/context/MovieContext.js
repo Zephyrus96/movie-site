@@ -4,6 +4,8 @@ export const MovieContext = createContext();
 export const MovieProvider = props => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
+  const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
+  const [nowPlayingLoading, setNowPlayingLoading] = useState(true);
   const [popularLoading, setPopularLoading] = useState(true);
   const [upcomingLoading, setUpcomingLoading] = useState(true);
   const [movie, setMovie] = useState({});
@@ -18,7 +20,11 @@ export const MovieProvider = props => {
     upcomingLoading,
     setUpcomingLoading,
     movie,
-    setMovie
+    setMovie,
+    nowPlayingMovies,
+    setNowPlayingMovies,
+    nowPlayingLoading,
+    setNowPlayingLoading
   };
 
   return (

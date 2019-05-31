@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./navbar.module.css";
 
@@ -19,13 +20,9 @@ const Navbar = () => {
             <FontAwesomeIcon className={styles.icon} icon="bell" />
           </li>
           <li className={`${styles.listItem} ${styles.link}`}>
-            <a href="#">
-              <h5>Login</h5>
-            </a>
-            <p> &nbsp;|&nbsp; </p>
-            <a href="#">
-              <h5>Register</h5>
-            </a>
+            <NavLink to="/login">
+              <h5>Login/Register</h5>
+            </NavLink>
           </li>
         </ul>
       </nav>

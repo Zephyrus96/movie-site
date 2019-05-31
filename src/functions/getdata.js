@@ -17,3 +17,9 @@ export const getCastURL = id => {
   let url = baseMovieURL + id + "/credits?api_key=" + API_KEY;
   return url;
 };
+
+export const getNowPlayingURL = () => {
+  let url =
+    baseMovieURL + "now_playing?api_key=" + API_KEY + "&language=en-US&page=1";
+  return url;
+};

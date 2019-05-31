@@ -1,8 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./sidebar.module.css";
+import { genres } from "../../resources/details";
 
 const Sidebar = () => {
+  const categories = genres.map(genre => (
+    <li className={`${styles.listItem} ${styles.genreClickableItem}`}>
+      <NavLink
+        to={`/categories/${genre.id}`}
+        activeClassName={styles.isActive}
+        exact
+      >
+        <h4>{genre.name}</h4>
+      </NavLink>
+    </li>
+  ));
   return (
     <div className={styles.container}>
       <nav>
@@ -42,6 +54,13 @@ const Sidebar = () => {
               <h4>WATCH LATER</h4>
             </NavLink>
           </li>
+        </ul>
+
+        <ul className={styles.sidebarList}>
+          <li className={styles.listItem}>
+            <h4 className={styles.listTitle}>Categories</h4>
+          </li>
+          {categories}
         </ul>
       </nav>
     </div>

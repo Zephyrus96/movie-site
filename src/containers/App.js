@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "../containers/home/index";
 import MoviePage from "../containers/moviePage/index";
+import LoginPage from "./login/index";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -17,6 +18,7 @@ import {
 import "./App.css";
 import Navbar from "../components/navbars/navbar";
 import Sidebar from "../components/navbars/sidebar";
+import NowPlayingPage from "../containers/nowPlayingPage/index";
 
 function App() {
   library.add(
@@ -30,19 +32,26 @@ function App() {
     faPlay,
     faBookmark
   );
+
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <Sidebar />
-        <Switch>
+      <Switch>
+        <div className="App">
+          <Navbar />
+          <Sidebar />
           <div className="main-container">
             <Route path="/" component={Home} exact />
             <Route path="/movie/:id" component={MoviePage} exact />
             <Route path="/movie/category?=:category" />
+            <Route
+              path="/movies/now-watching"
+              component={NowPlayingPage}
+              exact
+            />
+            <Route path="/login" component={LoginPage} exact />
           </div>
-        </Switch>
-      </div>
+        </div>
+      </Switch>
     </Router>
   );
 }

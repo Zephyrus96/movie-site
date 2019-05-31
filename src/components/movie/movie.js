@@ -28,8 +28,6 @@ const Movie = props => {
     };
   }
 
-  console.log(genre);
-
   const year = getReleaseYear(props.releaseDate);
 
   return (

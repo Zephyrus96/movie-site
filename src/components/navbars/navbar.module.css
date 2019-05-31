@@ -1,8 +1,8 @@
 .container {
   display: flex;
+  height: 5rem;
   margin: 0.2rem 1.5rem;
-  grid-column: 2/-1;
-  align-items: center;
+  grid-column: 2 / span all;
   justify-content: flex-end;
 }
 .navList {

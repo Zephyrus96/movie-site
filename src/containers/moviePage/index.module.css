@@ -88,8 +88,9 @@ body {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  border-color: #e2e2e2;
+  border: 1px solid #e2e2e2;
   color: #e2e2e2;
+  font-weight: bold;
   height: 3.5rem;
   width: 8.5rem;
   background-color: rgba(0, 0, 0, 0);

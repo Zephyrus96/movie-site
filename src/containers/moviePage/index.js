@@ -101,7 +101,7 @@ const MoviePage = props => {
                   icon="play"
                   transform="shrink-2 left-6"
                 />
-                PLAY MOVIE
+                Play Movie
               </button>
             </div>
             <div className={styles.watchLaterDiv}>
@@ -111,7 +111,7 @@ const MoviePage = props => {
                   icon="bookmark"
                   transform="shrink-2 left-6"
                 />
-                WATCH LATER
+                Watch Later
               </button>
             </div>
           </div>
