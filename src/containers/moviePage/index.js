@@ -39,7 +39,7 @@ const MoviePage = props => {
   useEffect(() => {
     getMovieDetails();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [movieDetails]);
 
   useEffect(() => {
     getCastMembers();

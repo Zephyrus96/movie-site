@@ -23,3 +23,22 @@ export const getNowPlayingURL = () => {
     baseMovieURL + "now_playing?api_key=" + API_KEY + "&language=en-US&page=1";
   return url;
 };
+
+export const getCategoryURL = id => {
+  let url =
+    "https://api.themoviedb.org/3/discover/movie?api_key=" +
+    API_KEY +
+    "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" +
+    id;
+  return url;
+};
+
+export const getSearchResults = query => {
+  let url =
+    "https://api.themoviedb.org/3/search/movie?api_key=" +
+    API_KEY +
+    "&language=en-US&query=" +
+    query +
+    "&page=1&include_adult=false";
+  return url;
+};

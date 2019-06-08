@@ -1,0 +1,9 @@
+.title {
+  color: #e2e2e2;
+  text-align: center;
+}
+.movieContainer {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}

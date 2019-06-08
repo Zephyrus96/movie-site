@@ -23,15 +23,6 @@ const Sidebar = () => {
             <h4 className={styles.listTitle}>Browse</h4>
           </li>
           <li className={`${styles.listItem} ${styles.clickableItem}`}>
-            <NavLink
-              to="/discover/movie"
-              activeClassName={styles.isActive}
-              exact
-            >
-              <h4>DISCOVER</h4>
-            </NavLink>
-          </li>
-          <li className={`${styles.listItem} ${styles.clickableItem}`}>
             <NavLink to="/" activeClassName={styles.isActive} exact>
               <h4>{"TV & MOVIES"}</h4>
             </NavLink>

@@ -17,6 +17,7 @@
   margin-left: 1.8rem;
   font-size: 1.1rem;
   color: #beb9b9;
+  cursor: pointer;
 }
 
 .listItem a {
@@ -30,12 +31,14 @@
 }
 
 .searchBox {
+  position: relative;
   display: flex;
   border-radius: 1rem;
   width: 100%;
   height: 2rem;
   align-items: center;
   transform: translateY(-7%);
+  z-index: 20;
 }
 
 .searchBox input {
@@ -44,11 +47,39 @@
   outline: none;
   display: none;
   margin-left: 0.4rem;
+  width: 12rem;
   transition: 300ms;
   color: #e2e2e2;
 }
 
 .searchBtn {
-  border-radius: 50%;
   margin-right: 0.5rem;
+  border: none;
+  outline: none;
+  background: none;
+  color: #beb9b9;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.searchResults {
+  position: absolute;
+  top: 2.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-wrap: nowrap;
+  background: rgb(34, 43, 48);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
+  z-index: 20;
+}
+
+.resultRow {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.resultRow img {
+  justify-self: flex-start;
 }

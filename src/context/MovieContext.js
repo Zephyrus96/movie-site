@@ -5,6 +5,7 @@ export const MovieProvider = props => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
+  const [categoryMovies, setCategoryMovies] = useState([]);
   const [nowPlayingLoading, setNowPlayingLoading] = useState(true);
   const [popularLoading, setPopularLoading] = useState(true);
   const [upcomingLoading, setUpcomingLoading] = useState(true);
@@ -24,7 +25,9 @@ export const MovieProvider = props => {
     nowPlayingMovies,
     setNowPlayingMovies,
     nowPlayingLoading,
-    setNowPlayingLoading
+    setNowPlayingLoading,
+    categoryMovies,
+    setCategoryMovies
   };
 
   return (

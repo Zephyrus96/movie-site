@@ -19,6 +19,7 @@ import "./App.css";
 import Navbar from "../components/navbars/navbar";
 import Sidebar from "../components/navbars/sidebar";
 import NowPlayingPage from "../containers/nowPlayingPage/index";
+import CategoryPage from "../containers/categoryPage/index";
 
 function App() {
   library.add(
@@ -42,7 +43,7 @@ function App() {
           <div className="main-container">
             <Route path="/" component={Home} exact />
             <Route path="/movie/:id" component={MoviePage} exact />
-            <Route path="/movie/category?=:category" />
+            <Route path="/categories/:id" component={CategoryPage} />
             <Route
               path="/movies/now-watching"
               component={NowPlayingPage}
