@@ -1,11 +1,15 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
+import SmallSidebar from "./smallSidebar";
 import styles from "./sidebar.module.css";
 import { genres } from "../../resources/details";
 
 const Sidebar = () => {
+
+  const [showSmall , setShowSmall] = useState(false);
+
   const categories = genres.map(genre => (
-    <li className={`${styles.listItem} ${styles.genreClickableItem}`}>
+    <li key={genre.id} className={`${styles.listItem} ${styles.genreClickableItem}`}>
       <NavLink
         to={`/categories/${genre.id}`}
         activeClassName={styles.isActive}
@@ -15,7 +19,21 @@ const Sidebar = () => {
       </NavLink>
     </li>
   ));
+
+  const handleResize = () => {
+    setShowSmall(window.innerWidth <= 865);
+  }
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  },[]);
+
   return (
+    <React.Fragment>
+    {!showSmall &&
     <div className={styles.container}>
       <nav>
         <ul className={styles.sidebarList}>
@@ -36,14 +54,8 @@ const Sidebar = () => {
               <h4>NOW WATCHING</h4>
             </NavLink>
           </li>
-          <li className={`${styles.listItem} ${styles.clickableItem}`}>
-            <NavLink
-              to="/movies/watch-later"
-              activeClassName={styles.isActive}
-              exact
-            >
-              <h4>WATCH LATER</h4>
-            </NavLink>
+          <li className={`${styles.listItem} ${styles.clickableItem} ${styles.disabledLink}`}>
+            <h4>WATCH LATER</h4>
           </li>
         </ul>
 
@@ -54,7 +66,9 @@ const Sidebar = () => {
           {categories}
         </ul>
       </nav>
-    </div>
+    </div>}
+    {showSmall && <SmallSidebar/>}
+    </React.Fragment>
   );
 };
 

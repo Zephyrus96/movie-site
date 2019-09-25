@@ -1,0 +1,40 @@
+.pagination{
+    width: 100%;
+    list-style: none;
+    color: #e2e2e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination li{
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+
+.pagination li a{
+    text-decoration: none;
+    outline: none;
+}
+
+.pagination li:hover,.pagination li:active{
+    color:#1b5f27;
+    cursor: pointer;
+}
+
+
+.active__page{
+    color:#1b5f27;
+}
+
+.disabled__page{
+    color: #666666;
+}
+
+.disabled__page a:hover,.disabled__page a:active{
+    color: #666666;
+    cursor: default;
+}
+  

@@ -3,8 +3,6 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const keys = require("../../../resources/mongo");
-
 //User Model
 const User = require("../../models/user");
 
@@ -16,6 +14,7 @@ const validateLoginInput = require("../../validation/login");
 //@desc Register the user
 //@access Public
 router.post("/register", (req, res) => {
+  console.log("innit");
   //We know that the function will return errors and isValid, we can use ES6 destructuring.
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -25,11 +24,7 @@ router.post("/register", (req, res) => {
   }
 
   //Check if user already exists, if not add the user.
-  // User.findOne({ username: req.body.username }).then(user => {
-  //   if (user) {
-  //     return res.status(400).json({ email: "Username already exists." });
-  //   }
-  // });
+  
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
       return res.status(400).json({ email: "Email already exists." });
@@ -60,6 +55,7 @@ router.post("/register", (req, res) => {
 //@access Public
 
 router.post("/login", (req, res) => {
+  console.log("innit");
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {
@@ -87,7 +83,7 @@ router.post("/login", (req, res) => {
         //Sign the token
         jwt.sign(
           payload,
-          keys.secretOrKey,
+          process.env.secretOrKey,
           { expiresIn: 31556926 }, //1 year
           (err, token) => {
             res.json({

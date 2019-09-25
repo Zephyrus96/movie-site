@@ -7,6 +7,7 @@ import PrevArrow from "../arrows/prevArrow";
 import axios from "axios";
 import "./slick.css";
 import Movie from "../movie/movie";
+import LoadingIcon from "../../resources/LoadingIcon";
 
 const UpcomingList = () => {
   //Context
@@ -78,23 +79,45 @@ const UpcomingList = () => {
         }
       },
       {
-        breakpoint: 800,
+        breakpoint: 865,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1
+        }
+      },
+
+      {
+        breakpoint: 715,
+        settings: {
+          slidesToShow: 3.5,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 625,
         settings: {
           slidesToShow: 3.2,
           slidesToScroll: 1
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 580,
         settings: {
-          slidesToShow: 3.2,
+          slidesToShow: 2.3,
           slidesToScroll: 1
         }
       },
       {
-        breakpoint: 500,
+        breakpoint: 430,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 350,
+        settings: {
+          slidesToShow: 1.5,
           slidesToScroll: 1
         }
       }
@@ -117,7 +140,7 @@ const UpcomingList = () => {
     return <Slider {...settings}>{upcomingList}</Slider>;
   }
 
-  return <h1>Loading...</h1>;
+  return <LoadingIcon />
 };
 
 export default UpcomingList;

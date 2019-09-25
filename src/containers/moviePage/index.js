@@ -6,6 +6,7 @@ import StarRating from "../../components/starRating/starRating";
 import Cast from "../../components/cast/cast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./index.module.css";
+import LoadingIcon from "../../resources/LoadingIcon";
 
 const MoviePage = props => {
   const match = matchPath(props.history.location.pathname, {
@@ -38,11 +39,15 @@ const MoviePage = props => {
 
   useEffect(() => {
     getMovieDetails();
+    
+    return () => {};
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieDetails]);
 
   useEffect(() => {
     getCastMembers();
+    
+    return () => {};
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cast]);
 
@@ -57,7 +62,7 @@ const MoviePage = props => {
     }
     const mainCast = cast.map(person => {
       if (cast.indexOf(person) < 5) {
-        return <Cast image={person.profile_path} name={person.name} />;
+        return <Cast key={person.profile_path} image={person.profile_path} name={person.name} />;
       }
       return null;
     });
@@ -88,9 +93,11 @@ const MoviePage = props => {
           </div>
 
           {/* Description */}
+          
           <div className={styles.description}>
-            <p>{movieDetails.overview}</p>
+            {movieDetails.overview ? <p>{movieDetails.overview}</p> : <h4>No description available.</h4>}
           </div>
+        
 
           {/* Buttons */}
           <div className={styles.buttons}>
@@ -117,16 +124,17 @@ const MoviePage = props => {
           </div>
 
           {/* CAST */}
+          {cast.length ?
           <div className={styles.cast}>
             <h5>CAST</h5>
             <div>{mainCast}</div>
-          </div>
+          </div> : <div className={styles.cast}><h4>No cast info available.</h4></div>}
         </div>
       </div>
     );
   }
 
-  return <h1>Loading...</h1>;
+  return <LoadingIcon/>;
 };
 
 export default MoviePage;

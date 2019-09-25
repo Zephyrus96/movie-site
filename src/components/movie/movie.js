@@ -2,16 +2,19 @@ import React from "react";
 import "../../functions/getdata";
 import styles from "./movie.module.css";
 import StarRating from "../starRating/starRating";
+import UnknownImage from "../../resources/director-cut.png";
 import { Link } from "react-router-dom";
 import { genres } from "../../resources/details";
 
 const Movie = props => {
   const getMovieImage = (imageURL, size) => {
-    let url = "https://image.tmdb.org/t/p/" + size + imageURL;
+    let url = imageURL ? "https://image.tmdb.org/t/p/" + size + imageURL : UnknownImage;
     return url;
   };
 
   const getReleaseYear = date => {
+    if(!date)
+      return '?';
     return date.split("-", 1);
   };
 

@@ -10,14 +10,14 @@
 
 .slick-next {
   position: absolute;
-  right: 3%;
+  right: 1%;
   top: 33%;
   z-index: 1;
 }
 
 .slick-prev {
   position: absolute;
-  left: 0;
+  left: 1%;
   top: 33%;
   z-index: 1;
 }
@@ -27,7 +27,7 @@
   width: 1.5rem;
   height: 1.5rem;
   background-color: #484b4d;
-  opacity: 0;
+  opacity: 1;
 }
 
 .slick-next:hover,
@@ -37,10 +37,10 @@
   cursor: pointer;
 }
 
-.slick-slider:hover .slick-next,
+/* .slick-slider:hover .slick-next,
 .slick-slider:hover .slick-prev {
   opacity: 1;
-}
+} */
 
 .slick-next img,
 .slick-prev img {

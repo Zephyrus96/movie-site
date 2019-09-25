@@ -1,0 +1,8 @@
+{
+    "env": {
+      "MONGO_USER": "Bazman",
+      "MONGO_PASSWORD": "bazman96",
+      "MONGO_DB": "movies-db",
+      "secretOrKey" : "supersecretkey"
+    }
+  }

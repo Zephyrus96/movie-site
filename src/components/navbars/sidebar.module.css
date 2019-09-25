@@ -8,7 +8,7 @@
   width: 17rem;
   background-color: rgb(34, 43, 48);
   z-index: 2;
-  animation: slideFromLeft 500ms;
+  /* animation: slideFromLeft 500ms; */
 }
 
 .sidebarList {
@@ -20,7 +20,7 @@
 .listItem {
   margin-top: 1rem;
   flex: 0 0 100%;
-  animation: slideFromLeft showBG 350ms 300ms;
+  /* animation: slideFromLeft showBG 350ms 300ms; */
 }
 
 .listTitle {
@@ -48,6 +48,10 @@
   color: #1b5f27;
 }
 
+.disabledLink{
+  color: #666666;
+}
+
 @keyframes slideFromLeft {
   0% {
     transform: translateX(-100%);
@@ -63,5 +67,15 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 865px){
+  .container{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1000;
+    display: none;
   }
 }
